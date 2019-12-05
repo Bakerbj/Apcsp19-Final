@@ -1,0 +1,19 @@
+p{
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.title{
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+
+
+.hide{
+    display: none;
+}
+
+body{
+    background-color: #ffe680;
+}
