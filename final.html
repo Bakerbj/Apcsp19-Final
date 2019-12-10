@@ -8,8 +8,8 @@
     
     <script src = "final.js"></script>
     <u> <h1 class = "title" id = "first">Random Story Generator</h1> </u> 
-    <p class = "mission">Our mission here at company industries is to prevent both 
-         boredom and writers block. By giving a completely random story, we will 
+    <p class = "mission">Our mission here at ebbuvkeau4owaiun industries is to prevent both 
+         boredom and writer's block. By giving a completely random story, we will 
          inspire readers to create their own stories, and with a litte work, they may
          even become almost as good of writers as this computer. Maybe.
     </p>
@@ -22,17 +22,43 @@
          which is far too uncommon in today's society. By providing humorous situations,
          users will develop good feelings about reading, and want to read more often.
     </p>
-    <button id = "begin" class = "mission">Let's Get Started!</button>
-    <p class = "second">Welcome to the Genre Page. Please pick a genre:</p>
-    <select class = "second" name="genres">
-            <option value="mystery">Mystery</option>
-            <option value="romance">Romance</option>
-            <option value= "sci fi">Sci Fi</option>
-            <option value= "fantasy">Fantasy</option>
-            <option value= "drama">Drama</option>
-            <option value= "math">Math</option>
-            <option value= "short story">Short Story</option>
-    </select>
-    <button id = "home" class="second">Back</button>
+    <br> <br>
+    <!--<button id = "begin" class = "mission">Let's Get Started!</button>
+    <p class = "second">Welcome to the Genre Page. Please pick a genre:</p>-->
+   
+    <!--<button id = "home" class="second">Back</button>-->
+    <p class = "mission">Now please fill out some basic information</p>
+    <form name="basics">
+         <h5 class="mid">Genre:</h5>
+          <select  class = "second mid" name="selection">
+               <option value="mystery">Mystery</option>
+               <option value="romance">Romance</option>
+               <option value= "sci fi">Sci Fi</option>
+               <option value= "fantasy">Fantasy</option>
+               <option value= "drama">Drama</option>
+               <option value= "math">Math</option>
+               <option value= "short story">Short Story</option> 
+          </select>
+          <br>
+          <h5 class="mid">Character Name:</h5>
+          <input name = "charname" class = "third mid" type="text" placeholder="e.g. Ernst">
+          <br>
+          <h5 class = "mid">Setting:</h5>
+          <input name = "setting" class = "mid" type="text" placeholder="e.g. Sweet Home Alabama">
+          <br>
+          <h5 class="mid">Weather:</h5>
+          <input name = "weather" class = "mid" type="text" placeholder="e.g. Tornadoing">
+          <br>
+          <h5 class="mid">Side Character Name</h5>
+          <input name = "scharname" class = "mid" type="text" placeholder="e.g. Chad">
+          <br>
+          <h5 class="mid">Relation to main character:</h5>
+          <input name = "scharname" class = "mid" type="text" placeholder="e.g. Sworn Enemy">
+          <br>
+          <input id="details" class="mid"type="submit">
+     </form>
+    <!--<button id = "naming" class="second mid">Go!</button>
+    <button id = "story" class="third">Go!(again)</button>-->
+    <el id="empty"></el>
 </body>
 </html>
