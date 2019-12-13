@@ -79,7 +79,7 @@ function ready () {
         });
         let bet = ""
         let noun = ""
-        let subject = ""
+        //let subject = ""
         let snouns = ["house ", "car ", "brownie ", "computer ", "cookie "];
         let pnouns = ["houses ", "cars ", "brownies ", "computers ", "cookies "];
         let verbs = ["erasing ", "watching ", "eating ", "making ", "stabbing "]
@@ -102,7 +102,7 @@ function ready () {
         }
 
         sentsf = name.value + " is " + verb + bet + noun + "in " + place.value + "."
-        sentsn = 
+        //sentsn = subject + pv + 
         let el = document.createElement('p');
             el.innerHTML = sentsf;
 
