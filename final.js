@@ -79,44 +79,34 @@ function ready () {
         });
         let bet = ""
         let noun = ""
-        
-        let snouns = ["house", "car", "brownie", "computer", "cookies"];
-        let pnouns = ["houses", "cars", "brownies", "computers", "cookies"];
-        let verbs = ["jumping", "running", "eating", "making", "stabbing"]
-        let sorpn = Math.random()
-        if (sorpn === 0) {
-            noun = snouns[Math.floor(Math.random() * 6)];
-            bet = "a";
+        let subject = ""
+        let snouns = ["house ", "car ", "brownie ", "computer ", "cookie "];
+        let pnouns = ["houses ", "cars ", "brownies ", "computers ", "cookies "];
+        let verbs = ["erasing ", "watching ", "eating ", "making ", "stabbing "]
+        let sorpn = [Math.floor(Math.random() * 2)];
+        if (sorpn == 0) {
+            noun = snouns[Math.floor(Math.random() * 5)];
+            bet = "a ";
         }
-        if (sorpn === 1) {
-            noun = pnouns[Math.floor(Math.random() * 6)];
-            bet = "some";
+        if (sorpn == 1) {
+            noun = pnouns[Math.floor(Math.random() * 5)];
+            bet = "some ";
         }
-        let verb = verbs[Math.floor(Math.random() * 6)];
-        
-        sents = name + verb + bet + noun + "."
-        
+        let verb = verbs[Math.floor(Math.random() * 5)];
+        let norp = [Math.floor(Math.random() * 2)];
+        if (norp == 1){
+            subject = name.value;
+        }
+        if (norp == 0) {
+            subject = "they";
+        }
+
+        sentsf = name.value + " is " + verb + bet + noun + "in " + place.value + "."
+        sentsn = 
         let el = document.createElement('p');
-            el.innerHTML = "you typed:" + bet;
+            el.innerHTML = sentsf;
 
         empty.append(el);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     };
 };
