@@ -15,7 +15,9 @@ function ready () {
     mids.forEach(c => {
         c.classList.add("cent");
     })
-
+    mids.forEach(c => {
+        c.classList.remove("hide");
+    })
     // thirds.forEach(c => {
     //     c.classList.add("hide");
     // });
@@ -64,14 +66,59 @@ function ready () {
     let basics = document.forms.basics;
     let gen = basics.elements.selection;
     let name = basics.elements.charname;
-    senst1 = name.value
-
+    let place = basics.elements.setting;
+    let weath = basics.elements.weather;
+    let sid = basics.elements.scharname;
+    let relate = basics.elements.relation;
+    
+   
     document.basics.onsubmit = function(e) {
         e.preventDefault();
+        mids.forEach(c => {
+            c.classList.add("hide");
+        });
+        let bet = ""
+        let noun = ""
+        
+        let snouns = ["house", "car", "brownie", "computer", "cookies"];
+        let pnouns = ["houses", "cars", "brownies", "computers", "cookies"];
+        let verbs = ["jumping", "running", "eating", "making", "stabbing"]
+        let sorpn = Math.random()
+        if (sorpn === 0) {
+            noun = snouns[Math.floor(Math.random() * 6)];
+            bet = "a";
+        }
+        if (sorpn === 1) {
+            noun = pnouns[Math.floor(Math.random() * 6)];
+            bet = "some";
+        }
+        let verb = verbs[Math.floor(Math.random() * 6)];
+        
+        sents = name + verb + bet + noun + "."
+        
+        let el = document.createElement('p');
+            el.innerHTML = "you typed:" + bet;
+
+        empty.append(el);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     };
-
-
 };
 
 document.addEventListener("DOMContentLoaded", ready);

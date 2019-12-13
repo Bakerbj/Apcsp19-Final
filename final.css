@@ -10,9 +10,7 @@ p{
 
 
 
-.hide{
-    display: none;
-}
+
 
 body{
     background-color: #ffe680;
@@ -23,4 +21,8 @@ body{
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+}
+
+.hide{
+    display: none;
 }
