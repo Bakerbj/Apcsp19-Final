@@ -85,6 +85,7 @@ function ready () {
         let bet = ""
         let noun = ""
         let chars = []
+        let neg1 = ""
         if (gen.value == "mystery") {
             chars.push("human", "detective", "murderer")
         } else if (gen.value == "romance") {
@@ -106,6 +107,9 @@ function ready () {
         let snouns = ["house ", "car ", "brownie ", "computer ", "cookie ", "rattlesnake ", "village ", "walnut ", "person "];
         let pnouns = ["houses ", "cars ", "brownies ", "computers ", "cookies ", "rattlesnakes ", "villages ", "walnuts ", "people "];
         let verbs = ["erasing ", "watching ", "eating ", "making ", "stabbing ", "jumping on ", "throwing ", "playing with ", "thinking about ", "laughing at ", "yelling at ", "writing about ", "insulting "]
+        let times = [" last night", " yesterday morning", " yesterday afternoon", " yesterday", " last week", " last month", " last year"]
+        let times2 = [" recently", " for a while", " since the beginning of time", " a while ago", " for days"]
+        let amounts = [" a lot", " one bit", " a very tiny amount", " a normal amount", " abnormal amounts"]
         let sorpn = [Math.floor(Math.random() * 2)];
         if (sorpn == 0) {
             noun = snouns[Math.floor(Math.random() * 8)];
@@ -116,22 +120,37 @@ function ready () {
             bet = "some ";
         }
         let verb = verbs[Math.floor(Math.random() * 13)];
+        let time = times[Math.floor(Math.random() * 7)];
         let norp = [Math.floor(Math.random() * 2)];
+        let amountnorp = [Math.floor(Math.random() * 2)];
+        let amount = amounts[Math.floor(Math.random() * 5)];
+        let time2 = times2[Math.floor(Math.random() * 5)];
         if (norp == 1){
             subject = name.value;
         }
         if (norp == 0) {
             subject = "they";
         }
-
-        sentsf = name.value + " the " + char + " was " + verb + bet + noun + "in " + place.value + "."
+        if (amountnorp == 0) {
+            neg1 = "been"
+        }
+        if (amountnorp == 1) {
+            neg1 = " not been"
+        }
+        sentsf = name.value + " the " + char + " was " + verb + bet + noun + "in " + place.value + time + "."
+        sentss = "It had " + neg1 + " " + weath.value + amount + time2 + "."
         //sentsn = subject + pv + 
         let el = document.createElement('p');
             el.innerHTML = sentsf;
 
         empty.append(el);
+        
+        let ss = document.createElement('p');
+        ss.innerHTML = sentss;
 
+        empty.append(ss);
     };
+    
     back.onclick = function () {
     back.classList.add("hide");
         mids.forEach(c => {
