@@ -172,9 +172,20 @@ function ready () {
         if (gend.value == "female") {
             sidgend = "she was";
         };
+        if (gend.value == "other") {
+            sidgend = "they were";
+        };
         if (norp == 1){;
             subject1 = name.value + "'s";
-            subject2 = "They";
+            if (gend.value == "male") {
+                subject2 = "He";
+            }
+            if (gend.value == "female") {
+                subject2 = "She";
+            }
+            if (gend.value == "other") {
+                subject2 = "They"
+            }
         };
         if (norp == 0) {;
             subject1 = "their";
