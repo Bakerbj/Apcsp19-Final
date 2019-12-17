@@ -4,6 +4,7 @@ function ready () {
    let seconds = document.querySelectorAll(".second");
    let mids = document.querySelectorAll(".mid");
    let thirds = document.querySelectorAll(".third");
+   let x = 0
     // seconds.forEach(c => {
     //     c.classList.add("hide");
     // });
@@ -80,6 +81,15 @@ function ready () {
         if (name.value == ""|| place.value == "" || sid.value == "" || relate.value == "") {
             return alert("Please fill out all info")
         }
+        while (x < 1) {
+            let lo = document.createElement('p')
+            lo.innerHTML = "Your Created Sentences:"
+
+            intro.append(lo)
+            x = x + 1
+        }
+        
+
         e.preventDefault();
         back.classList.remove("hide");
         mids.forEach(c => {
