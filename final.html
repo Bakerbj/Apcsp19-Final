@@ -30,7 +30,7 @@
     <p class = "mission mids">Now please fill out some basic information</p>
     <form name="basics">
          <h5 class="mid">Genre:</h5>
-          <select  class = "second mid" name="selection">
+          <select  class = "mid" name="selection">
                <option value="mystery">Mystery</option>
                <option value="romance">Romance</option>
                <option value= "sci-fi">Sci Fi</option>
@@ -47,10 +47,23 @@
           <input name = "setting" class = "mid" type="text" placeholder="e.g. Sweet Home Alabama">
           <br>
           <h5 class="mid">Weather:</h5>
-          <input name = "weather" class = "mid" type="text" placeholder="e.g. Tornadoing">
+          <select  class = "mid" name="weather">
+               <option value="rain">rain</option>
+               <option value="sunshine">sunshine</option>
+               <option value= "snow">snow</option>
+               <option value= "wind">wind</option>
+               <option value= "fog">fog</option>
+          </select>
           <br>
           <h5 class="mid">Side Character Name</h5>
           <input name = "scharname" class = "mid" type="text" placeholder="e.g. Chad">
+          <br>
+          <h5 class="mid">Side Character Gender</h5>
+               <select  class = "mid" name="gender">
+                    <option value="male">male</option>
+                    <option value="female">female</option>
+                    <option value= "other"></option>
+               </select>
           <br>
           <h5 class="mid">Relation to main character:</h5>
           <input name = "relation" class = "mid" type="text" placeholder="e.g. Sworn Enemy">
@@ -59,6 +72,7 @@
      </form>
     <!--<button id = "naming" class="second mid">Go!</button>
     <button id = "story" class="third">Go!(again)</button>-->
+    <h2 class = "cent">Your completed sentences:</h2>
     <el id="empty"></el>
     <button id = "back"class = "again">Go again</button>
 </body>
