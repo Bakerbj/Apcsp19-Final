@@ -1,70 +1,18 @@
 function ready () {
     console.log("Page ready");
-   let statements = document.querySelectorAll(".mission");
-   let seconds = document.querySelectorAll(".second");
-   let mids = document.querySelectorAll(".mid");
-   let thirds = document.querySelectorAll(".third");
-   let x = 0
-    // seconds.forEach(c => {
-    //     c.classList.add("hide");
-    // });
+ 
+   let mids = document.querySelectorAll(".mid"); 
 
-    // statements.forEach(c => {
-    //     c.classList.remove("hide");
-    // });
-
+   let x = 0 //used later outside of onsubmit
+  
     mids.forEach(c => {
-        c.classList.add("cent");
+        c.classList.add("cent"); //centers elements
     })
     mids.forEach(c => {
-        c.classList.remove("hide");
+        c.classList.remove("hide"); //allows elements to appear
     })
-    back.classList.add("hide");
-    // thirds.forEach(c => {
-    //     c.classList.add("hide");
-    // });
+    back.classList.add("hide"); //hides elements
 
-    // begin.onclick = function() {
-    //     statements.forEach(c => {
-    //         c.classList.add("hide");
-    //     });
-    //     seconds.forEach(c => {
-    //         c.classList.remove("hide");
-    //     });
-    //     mids.forEach(c => {
-    //         c.classList.add("cent");
-    //     })
-    
-    // };
-    // home.onclick = function() {
-    //     statements.forEach(c => {
-    //         c.classList.remove("hide");
-    //     })
-    //     seconds.forEach(c => {
-    //         c.classList.add("hide");
-    //     })
-    //     mids.forEach(c => {
-    //         c.classList.remove("cent");
-    //     })
-
-    // };
-    // naming.onclick = function() {
-    //     seconds.forEach(c => {
-    //         c.classList.add("hide");
-    //     })
-    //     mids.forEach(c => {
-    //         c.classList.remove("cent");
-    //     })
-    //     thirds.forEach(c => {
-    //         c.classList.remove("hide");
-    //     })
-    // };
-    // story.onclick = function() {
-    //     thirds.forEach(c => {
-    //         c.classList.add("hide");
-    //     });
-    //     
-    // };
     let basics = document.forms.basics;
     let gen = basics.elements.selection;
     let name = basics.elements.charname;
@@ -78,32 +26,33 @@ function ready () {
     document.basics.onsubmit = function(e) {
    
 
-        if (name.value == ""|| place.value == "" || sid.value == "" || relate.value == "") {
+        if (name.value == ""|| place.value == "" || sid.value == "" || relate.value == "") { //must type in all of the values
             return alert("Please fill out all info")
         }
         if (x < 1) {
             let lo = document.createElement('p')
-            lo.innerHTML = "Your Created Sentences:"
+            lo.innerHTML = "Your Created Sentences:" //only appears once, since x is defined outside of the function
 
             intro.append(lo)
             x = x + 1
         }
+
         let y = 0
-        while (y < 3) {
+        while (y < 3) { //makes 4 sentences be randomly created 3 times
 
             e.preventDefault();
             back.classList.remove("hide");
             mids.forEach(c => {
                 c.classList.add("hide");
             });
-            let bet = "";
+            let bet = ""; //defining values where a random word can be inserted
             let noun = "";
             let chars = [];
             let neg1 = "";
             let verbs2 = []
             let verbs3 = []
-            let gennouns = []
-            if (gen.value == "mystery") {
+            let gennouns = [] 
+            if (gen.value == "mystery") { //character types based on genre
                 chars.push("human", "detective", "murderer");
             } else if (gen.value == "romance") {
                 chars.push("human", "lover", "love interest");
@@ -117,9 +66,9 @@ function ready () {
                 chars.push("nerd", "geek", "teacher");
             } else if (gen.value == "short_story") {
                 chars.push("random character", "human", "marshmallow");
-            };
+            }; 
 
-            if (gen.value == "mystery") {
+            if (gen.value == "mystery") { //verbs based on genre
                 verbs2.push("killed", "looked for", "talked with");
             } else if (gen.value == "romance") {
                 verbs2.push("kissed", "hugged", "stared creepily at");
@@ -134,7 +83,7 @@ function ready () {
             } else if (gen.value == "short_story") {
                 verbs2.push("flew to", "existed by", "stalked");
             }
-            if (gen.value == "mystery") {
+            if (gen.value == "mystery") { //used to add a second genre themed verb. For some reason, verb3 can't pull from verbs2 without gaining the exact same value as verb2
                 verbs3.push("killed", "looked for", "talked with");
             } else if (gen.value == "romance") {
                 verbs3.push("kissed", "hugged", "stared creepily at");
@@ -149,7 +98,7 @@ function ready () {
             } else if (gen.value == "short_story") {
                 verbs3.push("flew to", "existed by", "stalked");
             }
-            if (gen.value == "mystery") {
+            if (gen.value == "mystery") { //adds a finish to the sentences that is genre based
                 gennouns.push("with a knife", "without a warrant", "without planning first");
             } else if (gen.value == "romance") {
                 gennouns.push("in the face", "without their knowledge", "without purpose");
@@ -166,23 +115,23 @@ function ready () {
             }
             let char = chars[Math.floor(Math.random() * 3)];
             //let subject = "";
-            let snouns = ["house ", "car ", "brownie ", "computer ", "cookie ", "rattlesnake ", "village ", "walnut ", "person "];
+            let snouns = ["house ", "car ", "brownie ", "computer ", "cookie ", "rattlesnake ", "village ", "walnut ", "person "]; //options of words for sentences
             let pnouns = ["houses ", "cars ", "brownies ", "computers ", "cookies ", "rattlesnakes ", "villages ", "walnuts ", "people "];
             let verbs = ["erasing ", "watching ", "eating ", "making ", "stabbing ", "jumping on ", "throwing ", "playing with ", "thinking about ", "laughing at ", "yelling at ", "writing about ", "insulting "];
             let times = [" last night", " yesterday morning", " yesterday afternoon", " yesterday", " last week", " last month", " last year"];
             let times2 = [" recently", " for a while", " since the beginning of time", " a while ago", " for days"];
             let amounts = [" a lot", " a bit", " a very tiny amount", " a normal amount", " abnormal amounts"];
             let reasonings = ["Due to ", "Because of ", "In response to ", "In reaction to ", "For no reason whatsoever, not counting ", "Without any real reason, despite "];
-            let sorpn = [Math.floor(Math.random() * 2)];
+            let sorpn = [Math.floor(Math.random() * 2)]; //sorpn deals with singular or plural nouns
             if (sorpn == 0) {
-                noun = snouns[Math.floor(Math.random() * 8)];
+                noun = snouns[Math.floor(Math.random() * 8)]; //singular nouns
                 bet = "a ";
             }
             if (sorpn == 1) {
-                noun = pnouns[Math.floor(Math.random() * 8)];
+                noun = pnouns[Math.floor(Math.random() * 8)]; //plural nouns
                 bet = "some ";
             }
-            let verb2 = verbs2[Math.floor(Math.random() * 3)];
+            let verb2 = verbs2[Math.floor(Math.random() * 3)]; //randomly selects words and stores their values
             let verb = verbs[Math.floor(Math.random() * 13)];
             let time = times[Math.floor(Math.random() * 7)];
             let norp = [Math.floor(Math.random() * 2)];
@@ -193,7 +142,7 @@ function ready () {
             let gennoun = gennouns[Math.floor(Math.random() * 3)];
             let verb3 = verbs3[Math.floor(Math.random() * 3)];
             let sidgend = "";
-            if (gend.value == "male") {
+            if (gend.value == "male") { //pronouns based on gender
                 sidgend = "he was";
             };
 
@@ -203,7 +152,7 @@ function ready () {
             if (gend.value == "other") {
                 sidgend = "they were";
             };
-            if (norp == 1){;
+            if (norp == 1){; //more pronouns; norp is noun or pronouns
                 subject1 = name.value + "'s";
                 if (gend.value == "male") {
                     subject2 = "He";
@@ -219,7 +168,7 @@ function ready () {
                 subject1 = "their";
                 subject2 = sid.value;
             };
-            if (amountnorp == 0) {;
+            if (amountnorp == 0) {; //amount norp deals with negative or positive amounts of weather
                 neg1 = "been";
             };
             if (amountnorp == 1) {;
@@ -230,9 +179,9 @@ function ready () {
             sentsf = name.value + " the " + char + " was " + verb + bet + noun + "in " + place.value + time + ".";
             sentss = "There had " + neg1 + amount + " of " + weath.value + time2 + ".";
             sentst = reasoning + name.value + "'s actions, " + sid.value + " " + verb2 + " " + name.value + " " + gennoun + ".";
-            sentsn = subject2 + " then " + verb3 + " " + name.value + " " + "because " + sidgend + " " + name.value + "'s " + relate.value + ".";
+            sentsn = subject2 + " then " + verb3 + " " + name.value + " " + "because " + sidgend + " " + name.value + "'s " + relate.value + "."; //sentence structures
             
-            let el = document.createElement('p');
+            let el = document.createElement('p'); //creating the sentences and delete buttons
                 el.innerHTML = sentsf;
             let elbutton = document.createElement('button');
                 elbutton.innerHTML = "Delete";
