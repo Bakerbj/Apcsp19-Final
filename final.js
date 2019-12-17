@@ -81,7 +81,7 @@ function ready () {
         if (name.value == ""|| place.value == "" || sid.value == "" || relate.value == "") {
             return alert("Please fill out all info")
         }
-        while (x < 1) {
+        if (x < 1) {
             let lo = document.createElement('p')
             lo.innerHTML = "Your Created Sentences:"
 
