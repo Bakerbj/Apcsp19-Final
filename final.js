@@ -175,6 +175,7 @@ function ready () {
             let reasoning = reasonings[Math.floor(Math.random() * 6)];
             let time2 = times2[Math.floor(Math.random() * 5)];
             let gennoun = gennouns[Math.floor(Math.random() * 3)];
+            let verb3 = verbs2[Math.floor(Math.random() * 3)];
             let sidgend = "";
             if (gend.value == "male") {
                 sidgend = "he was";
@@ -213,7 +214,7 @@ function ready () {
             sentsf = name.value + " the " + char + " was " + verb + bet + noun + "in " + place.value + time + ".";
             sentss = "There had " + neg1 + amount + " of " + weath.value + time2 + ".";
             sentst = reasoning + name.value + "'s actions, " + sid.value + " " + verb2 + " " + name.value + " " + gennoun + ".";
-            sentsn = subject2 + " then " + verb2 + " " + name.value + " " + "because " + sidgend + " " + name.value + "'s " + relate.value + ".";
+            sentsn = subject2 + " then " + verb3 + " " + name.value + " " + "because " + sidgend + " " + name.value + "'s " + relate.value + ".";
             
             let el = document.createElement('p');
                 el.innerHTML = sentsf;
