@@ -101,6 +101,7 @@ function ready () {
             let chars = [];
             let neg1 = "";
             let verbs2 = []
+            let verbs3 = []
             let gennouns = []
             if (gen.value == "mystery") {
                 chars.push("human", "detective", "murderer");
@@ -132,6 +133,21 @@ function ready () {
                 verbs2.push("criticized", "worked with", "taught");
             } else if (gen.value == "short_story") {
                 verbs2.push("flew to", "existed by", "stalked");
+            }
+            if (gen.value == "mystery") {
+                verbs3.push("killed", "looked for", "talked with");
+            } else if (gen.value == "romance") {
+                verbs3.push("kissed", "hugged", "stared creepily at");
+            } else if (gen.value == "sci-fi") {
+                verbs3.push("beamed", "zapped", "lightsabered");
+            } else if (gen.value == "fantasy") {
+                verbs3.push("challenged", "shot", "declared war against");
+            } else if (gen.value == "drama") {
+                verbs3.push("cried in desparation to", "slapped", "hugged");
+            } else if (gen.value == "math") {
+                verbs3.push("criticized", "worked with", "taught");
+            } else if (gen.value == "short_story") {
+                verbs3.push("flew to", "existed by", "stalked");
             }
             if (gen.value == "mystery") {
                 gennouns.push("with a knife", "without a warrant", "without planning first");
@@ -175,7 +191,7 @@ function ready () {
             let reasoning = reasonings[Math.floor(Math.random() * 6)];
             let time2 = times2[Math.floor(Math.random() * 5)];
             let gennoun = gennouns[Math.floor(Math.random() * 3)];
-            let verb3 = verbs2[Math.floor(Math.random() * 3)];
+            let verb3 = verbs3[Math.floor(Math.random() * 3)];
             let sidgend = "";
             if (gend.value == "male") {
                 sidgend = "he was";
